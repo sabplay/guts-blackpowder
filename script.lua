@@ -21,6 +21,15 @@ game:GetService("Workspace").Camera.ChildAdded:Connect(function(zom)
        a:Clone().Parent = zom
    end
 end)
+
+function CreateCham(Zombie)
+   local h = Instance.new('Highlight', Zombie)
+   h.FillTransparency = 0.5
+   h.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+   h.Enabled = true
+   h.OutlineColor = Color3.fromRGB(0,0,0)
+   h.FillColor = Color3.fromRGB(255,0,0)
+end
 for i,v in pairs(workspace.Camera:GetChildren()) do
    if v.Name == 'm_Zombie' then
        CreateCham(v)
